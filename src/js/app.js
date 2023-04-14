@@ -15,7 +15,8 @@ const btnDeleteAll = document.querySelector('.btn-delete_all');
 class App {
   #map;
   #mapEvent;
-  #mapZoomLevel = 14;
+  #mapZoomLevel = 16;
+  #mapZoomMove = 17;
   #workouts = [];
 
   constructor() {
@@ -202,7 +203,7 @@ class App {
       work => work.id === workoutEl.dataset.id
     );
 
-    this.#map.setView(workout.coords, this.#mapZoomLevel, {
+    this.#map.setView(workout.coords, this.#mapZoomMove, {
       animate: true,
       pan: {
         duration: 1,
