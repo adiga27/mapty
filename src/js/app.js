@@ -1,4 +1,6 @@
-'use strict';
+import running from './running.js';
+import cycling from './cycling.js';
+
 const form = document.querySelector('.form');
 const containerWorkouts = document.querySelector('.workouts');
 const inputType = document.querySelector('.form__input--type');
@@ -8,56 +10,6 @@ const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
 const btnDeleteAll = document.querySelector('.btn-delete_all');
 
-class Workout {
-  date = new Date();
-  id = (Date.now() + '').slice(-10);
-
-  constructor(coords, distance, duration) {
-    this.coords = coords; //
-    this.distance = distance; // in km
-    this.duration = duration; // in hr
-  }
-
-  _setDescription() {
-    // prettier-ignore
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-    this.description = `${this.type[0].toUpperCase()}${this.type.slice(1)} on ${
-      months[this.date.getMonth()]
-    } ${this.date.getDate()}`;
-  }
-}
-
-class Running extends Workout {
-  type = 'running';
-  constructor(coords, distance, duration, cadence) {
-    super(coords, distance, duration);
-    this.cadence = cadence;
-    this.calcPace();
-    this._setDescription();
-  }
-
-  calcPace() {
-    this.pace = +(this.duration / this.distance).toFixed(2); // in min/km
-    return this.pace;
-  }
-}
-
-class Cycling extends Workout {
-  type = 'cycling';
-  constructor(coords, distance, duration, elevation) {
-    super(coords, distance, duration);
-    this.elevation = elevation;
-    this.calcSpeed();
-    this._setDescription();
-  }
-
-  calcSpeed() {
-    this.speed = +(this.distance / (this.duration / 60)).toFixed(2); // in km/hr
-    return this.speed;
-  }
-}
-//APPLICATION
 class App {
   #map;
   #mapEvent;
@@ -144,7 +96,7 @@ class App {
       )
         return alert('Enter positive Numbers!');
 
-      workout = new Running([lat, lng], distance, duration, cadence);
+      workout = new running([lat, lng], distance, duration, cadence);
     }
 
     if (type === 'cycling') {
@@ -155,7 +107,7 @@ class App {
       )
         return alert('Enter positive Numbers!');
 
-      workout = new Cycling([lat, lng], distance, duration, elevation);
+      workout = new cycling([lat, lng], distance, duration, elevation);
     }
 
     this.#workouts.push(workout);
@@ -275,9 +227,4 @@ class App {
   }
 }
 
-const app = new App();
-// const res = fetch(
-//   'https://api.weatherapi.com/v1/current.json?key=608284fea67d49e898b141643231304&q=23.21,23.78&aqi=no'
-// )
-//   .then(res1 => res1.json())
-//   .then(data =>);
+export default new App();
