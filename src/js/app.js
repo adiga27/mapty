@@ -15,7 +15,7 @@ const btnDeleteAll = document.querySelector('.btn-delete_all');
 class App {
   #map;
   #mapEvent;
-  #mapZoomLevel = 17;
+  #mapZoomLevel = 14;
   #workouts = [];
 
   constructor() {
