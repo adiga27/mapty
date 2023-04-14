@@ -1,0 +1,76 @@
+/* 1rem=1em=16px */
+
+/* *************************** */
+/* BELOW 1344px (SMALLER DESKTOPS) */
+/* *************************** */
+@media (max-width: 84em) {
+  html {
+    font-size: 59.37%;
+  }
+}
+/* *************************** */
+/* BELOW 1200px (Landscape Tablets) */
+/* *************************** */
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+/* *************************** */
+/* BELOW 944px (Tablets) */
+/* *************************** */
+@media (max-width: 59em) {
+  html {
+    font-size: 43.75%;
+  }
+}
+/* *************************** */
+/* BELOW 704px (Smaller Tablets) */
+/* *************************** */
+@media (max-width: 44em) {
+  html {
+    font-size: 50%;
+  }
+  body {
+    flex-direction: column;
+  }
+  .sidebar {
+    flex-basis: 0;
+    height: 50%;
+    width: 100%;
+    overscroll-behavior-y: auto;
+  }
+  .form {
+    height: auto;
+    width: 45rem;
+  }
+  .workout {
+    width: 45rem;
+  }
+}
+/* *************************** */
+/* BELOW 544px (Phones) */
+/* *************************** */
+@media (max-width: 34em) {
+  html {
+    font-size: 50%;
+  }
+  .sidebar {
+    padding: 2rem 4rem 1rem 4rem;
+  }
+  .form {
+    width: auto;
+    padding: 1.5rem 3.5rem;
+  }
+  .form__row {
+    flex-direction: column;
+  }
+  .workout {
+    /* grid-template-columns: 1fr 1fr; */
+    width: auto;
+  }
+}
+/* --FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 */
+/* --Space System (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 */
