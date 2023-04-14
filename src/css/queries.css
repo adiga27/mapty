@@ -41,6 +41,9 @@
     overscroll-behavior-y: auto;
     padding: 3rem 5rem 2rem 2rem;
   }
+  .logo {
+    margin-bottom: 2rem;
+  }
   .form {
     height: auto;
     width: 45rem;
