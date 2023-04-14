@@ -39,6 +39,7 @@
     height: 50%;
     width: 100%;
     overscroll-behavior-y: auto;
+    padding: 3rem 5rem 2rem 2rem;
   }
   .form {
     height: auto;
@@ -46,6 +47,15 @@
   }
   .workout {
     width: 45rem;
+  }
+  .footer {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2rem 0 1rem 0;
+  }
+  .btn {
+    margin: 0;
   }
 }
 /* *************************** */
