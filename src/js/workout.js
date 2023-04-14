@@ -1,3 +1,6 @@
+import 'core-js/stable';
+import 'regenerator-runtime/runtime.js';
+
 export default class Workout {
   date = new Date();
   id = (Date.now() + '').slice(-10);

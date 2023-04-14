@@ -1,3 +1,6 @@
+import 'core-js/stable';
+import 'regenerator-runtime/runtime.js';
+
 import Workout from './workout.js';
 
 export default class Running extends Workout {

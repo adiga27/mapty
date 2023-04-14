@@ -1,5 +1,7 @@
 import running from './running.js';
 import cycling from './cycling.js';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime.js';
 
 const form = document.querySelector('.form');
 const containerWorkouts = document.querySelector('.workouts');
